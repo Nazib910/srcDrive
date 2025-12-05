@@ -10,12 +10,13 @@ export const metadata: Metadata = {
   title: "SRCDrive - SaaS Agency",
   description: "Professional web development, mobile app development, UI/UX design, cloud solutions, and custom software development services.",
   generator: "SRCDrive",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
+}
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
 }
 
 export default function RootLayout({
