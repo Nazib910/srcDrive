@@ -124,7 +124,7 @@ export const FollowPointer = ({
           fill="currentColor"
           strokeWidth="1"
           viewBox="0 0 16 16"
-          className="h-6 w-6 -rotate-[70deg] transform stroke-orange-400 text-orange-500 drop-shadow-lg pointer-events-none"
+          className="h-6 w-6 -rotate-[70deg] transform stroke-primary/60 text-primary drop-shadow-lg pointer-events-none"
           height="1em"
           width="1em"
           xmlns="http://www.w3.org/2000/svg"
@@ -133,7 +133,7 @@ export const FollowPointer = ({
         </svg>
         <motion.div
           style={{
-            backgroundColor: "#e78a53", // Fixed orange color
+            backgroundColor: "hsl(var(--primary))",
           }}
           initial={{
             scale: 0.5,

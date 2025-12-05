@@ -51,8 +51,8 @@ export default function Features() {
               transition={{ duration: 0.5, delay: 0.2 }}
               whileHover={{
                 scale: 1.02,
-                borderColor: "rgba(231, 138, 83, 0.6)",
-                boxShadow: "0 0 30px rgba(231, 138, 83, 0.2)",
+                borderColor: "var(--primary)",
+                boxShadow: "0 0 30px var(--primary)",
               }}
             >
               <div className="flex flex-col gap-3 sm:gap-4">
@@ -82,8 +82,8 @@ export default function Features() {
               transition={{ duration: 0.5, delay: 0.3 }}
               whileHover={{
                 scale: 1.02,
-                borderColor: "rgba(231, 138, 83, 0.6)",
-                boxShadow: "0 0 30px rgba(231, 138, 83, 0.2)",
+                borderColor: "var(--primary)",
+                boxShadow: "0 0 30px var(--primary)",
               }}
             >
               <div className="flex flex-col gap-3 sm:gap-4">
@@ -111,8 +111,8 @@ export default function Features() {
               transition={{ duration: 0.5, delay: 0.4 }}
               whileHover={{
                 scale: 1.02,
-                borderColor: "rgba(231, 138, 83, 0.5)",
-                boxShadow: "0 0 30px rgba(231, 138, 83, 0.2)",
+                borderColor: "var(--primary)",
+                boxShadow: "0 0 30px var(--primary)",
               }}
             >
               <div className="flex flex-col gap-3 sm:gap-4">
@@ -140,8 +140,8 @@ export default function Features() {
               transition={{ duration: 0.5, delay: 0.5 }}
               whileHover={{
                 scale: 1.02,
-                borderColor: "rgba(231, 138, 83, 0.6)",
-                boxShadow: "0 0 30px rgba(231, 138, 83, 0.2)",
+                borderColor: "var(--primary)",
+                boxShadow: "0 0 30px var(--primary)",
               }}
             >
               <div className="flex flex-col gap-3 sm:gap-4">
@@ -169,8 +169,8 @@ export default function Features() {
               transition={{ duration: 0.5, delay: 0.6 }}
               whileHover={{
                 scale: 1.01,
-                borderColor: "rgba(231, 138, 83, 0.6)",
-                boxShadow: "0 0 30px rgba(231, 138, 83, 0.2)",
+                borderColor: "var(--primary)",
+                boxShadow: "0 0 30px var(--primary)",
               }}
             >
               <div className="flex flex-col gap-3 sm:gap-4">

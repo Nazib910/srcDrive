@@ -2,12 +2,15 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef, useState, useEffect } from "react"
+import { useTheme } from "next-themes"
 import { geist } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import { useLocalization } from "@/contexts/LocalizationContext"
+import RotatingEarth from "./rotating-earth"
 
 export const About = () => {
-  const { t } = useLocalization()
+  const { t, language } = useLocalization()
+  const { theme } = useTheme()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: false, amount: 0.3 })
   const [displayValues, setDisplayValues] = useState([0, 0, 0, 0])
@@ -97,19 +100,14 @@ export const About = () => {
             </div>
           </motion.div>
 
-          {/* Right Image */}
+          {/* Right - Rotating Earth */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative h-96 md:h-full min-h-96 rounded-xl overflow-hidden border border-border/30"
+            className="relative h-96 md:h-full min-h-96"
           >
-            <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=600&fit=crop"
-              alt={t('about.alt')}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
+            <RotatingEarth width={800} height={600} className="w-full h-full" language={language} theme={theme} />
           </motion.div>
         </div>
       </motion.div>
