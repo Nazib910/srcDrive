@@ -31,17 +31,17 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
         const dpr = window.devicePixelRatio || 1
         canvas.width = containerWidth * dpr
         canvas.height = containerHeight * dpr
-        canvas.style.width = `${containerWidth}px`
-        canvas.style.height = `${containerHeight}px`
         context.scale(dpr, dpr)
 
-        // Define location coordinates for different languages
-        const locationCoordinates: { [key: string]: { coords: [number, number], name: string } } = {
-            en: { coords: [90.4125, 23.8103], name: "Bangladesh" }, // Dhaka, Bangladesh
-            de: { coords: [10.4515, 51.1657], name: "Deutschland" }, // Germany center
-        }
-
-        const currentLocation = locationCoordinates[language] || locationCoordinates.en
+        // Define location coordinates (Longitude, Latitude)
+        const locations = [
+            { coords: [90.3563, 23.6850], name: "Bangladesh" },
+            { coords: [10.4515, 51.1657], name: "Germany" },
+            { coords: [-95.7129, 37.0902], name: "USA" },
+            { coords: [-106.3468, 56.1304], name: "Canada" },
+            { coords: [133.7751, -25.2744], name: "Australia" },
+            { coords: [-3.4360, 55.3781], name: "UK" },
+        ]
 
         // Create projection and path generator for Canvas
         const projection = d3
@@ -144,11 +144,20 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
 
             const currentScale = projection.scale()
             const scaleFactor = currentScale / radius
+            const isLight = theme !== "dark"
+
+            // Colors based on theme
+            const outlineColor = isLight ? "#4a4a4a" : "#ffffff"
+            const graticuleColor = isLight ? "#9ca3af" : "#ffffff"
+            const landColor = isLight ? "#4a4a4a" : "#ffffff"
+            const dotColor = isLight ? "#4b5563" : "#999999"
+            const markerColor = "#ff3b3b"
+            const textColor = isLight ? "#000000" : "#ffffff"
 
             // Draw globe outline only (transparent background)
             context.beginPath()
             context.arc(containerWidth / 2, containerHeight / 2, currentScale, 0, 2 * Math.PI)
-            context.strokeStyle = "#ffffff"
+            context.strokeStyle = outlineColor
             context.lineWidth = 2 * scaleFactor
             context.stroke()
 
@@ -157,7 +166,7 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
                 const graticule = d3.geoGraticule()
                 context.beginPath()
                 path(graticule())
-                context.strokeStyle = "#ffffff"
+                context.strokeStyle = graticuleColor
                 context.lineWidth = 1 * scaleFactor
                 context.globalAlpha = 0.25
                 context.stroke()
@@ -168,7 +177,7 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
                 landFeatures.features.forEach((feature: any) => {
                     path(feature)
                 })
-                context.strokeStyle = "#ffffff"
+                context.strokeStyle = landColor
                 context.lineWidth = 1 * scaleFactor
                 context.stroke()
 
@@ -184,52 +193,64 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
                     ) {
                         context.beginPath()
                         context.arc(projected[0], projected[1], 1.2 * scaleFactor, 0, 2 * Math.PI)
-                        context.fillStyle = "#999999"
+                        context.fillStyle = dotColor
                         context.fill()
                     }
                 })
 
-                // Draw location pointer for current language
-                const locationProjected = projection(currentLocation.coords)
-                if (locationProjected) {
-                    const [x, y] = locationProjected
+                // Draw location pointers
+                locations.forEach(location => {
+                    const locationProjected = projection(location.coords as [number, number])
+                    // Only draw if visible (on the front side of the globe)
+                    // We can check this by calculating the distance from the center or checking if it's clipped
+                    // But d3.geoOrthographic clips automatically, so if projection returns null it's hidden?
+                    // Actually projection returns coordinates even if behind, but we need to check visibility.
+                    // A simple way with d3 geo is to check if it's in the clip angle.
 
-                    // Draw pulsing circle
-                    const time = Date.now() / 1000
-                    const pulseScale = 1 + Math.sin(time * 2) * 0.3
+                    // Better way: check if the point is visible
+                    const center = projection.invert!([containerWidth / 2, containerHeight / 2])
+                    const distance = d3.geoDistance(location.coords as [number, number], center!)
 
-                    // Outer glow
-                    context.beginPath()
-                    context.arc(x, y, 12 * scaleFactor * pulseScale, 0, 2 * Math.PI)
-                    context.fillStyle = "rgba(255, 59, 59, 0.2)"
-                    context.fill()
+                    if (distance < Math.PI / 2 && locationProjected) {
+                        const [x, y] = locationProjected
 
-                    // Middle circle
-                    context.beginPath()
-                    context.arc(x, y, 8 * scaleFactor, 0, 2 * Math.PI)
-                    context.fillStyle = "rgba(255, 59, 59, 0.5)"
-                    context.fill()
+                        // Draw pulsing circle
+                        const time = Date.now() / 1000
+                        const pulseScale = 1 + Math.sin(time * 2) * 0.3
 
-                    // Inner dot
-                    context.beginPath()
-                    context.arc(x, y, 4 * scaleFactor, 0, 2 * Math.PI)
-                    context.fillStyle = "#ff3b3b"
-                    context.fill()
+                        // Outer glow
+                        context.beginPath()
+                        context.arc(x, y, 12 * scaleFactor * pulseScale, 0, 2 * Math.PI)
+                        context.fillStyle = "rgba(255, 59, 59, 0.2)"
+                        context.fill()
 
-                    // Draw pointer pin
-                    context.beginPath()
-                    context.moveTo(x, y)
-                    context.lineTo(x, y - 20 * scaleFactor)
-                    context.strokeStyle = "#ff3b3b"
-                    context.lineWidth = 2 * scaleFactor
-                    context.stroke()
+                        // Middle circle
+                        context.beginPath()
+                        context.arc(x, y, 8 * scaleFactor, 0, 2 * Math.PI)
+                        context.fillStyle = "rgba(255, 59, 59, 0.5)"
+                        context.fill()
 
-                    // Draw label
-                    context.font = `bold ${12 * scaleFactor}px sans-serif`
-                    context.fillStyle = theme === "dark" ? "#ffffff" : "#000000"
-                    context.textAlign = "center"
-                    context.fillText(currentLocation.name, x, y - 25 * scaleFactor)
-                }
+                        // Inner dot
+                        context.beginPath()
+                        context.arc(x, y, 4 * scaleFactor, 0, 2 * Math.PI)
+                        context.fillStyle = markerColor
+                        context.fill()
+
+                        // Draw pointer pin
+                        context.beginPath()
+                        context.moveTo(x, y)
+                        context.lineTo(x, y - 20 * scaleFactor)
+                        context.strokeStyle = markerColor
+                        context.lineWidth = 2 * scaleFactor
+                        context.stroke()
+
+                        // Draw label
+                        context.font = `bold ${12 * scaleFactor}px sans-serif`
+                        context.fillStyle = textColor
+                        context.textAlign = "center"
+                        context.fillText(location.name, x, y - 25 * scaleFactor)
+                    }
+                })
             }
         }
 

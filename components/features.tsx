@@ -42,7 +42,7 @@ export default function Features() {
         </h2>
 
         <div className="w-full cursor-none">
-          <div className="grid grid-cols-12 gap-4 justify-center">
+          <div className="grid grid-cols-12 gap-2 justify-center">
             {/* Web Development */}
             <motion.div
               className="group border-border/50 text-card-foreground relative col-span-12 flex flex-col overflow-hidden rounded-xl border-2 p-4 sm:p-6 shadow-lg transition-all ease-in-out md:col-span-6 xl:col-span-5 xl:col-start-2"
@@ -55,7 +55,7 @@ export default function Features() {
                 boxShadow: "0 0 30px var(--primary)",
               }}
             >
-              <div className="flex flex-col gap-3 sm:gap-4">
+              <div className="flex flex-col gap-3 sm:gap-4 items-center text-center">
                 <h3 className="text-xl sm:text-2xl leading-tight font-semibold tracking-tight">{t('features.web.title')}</h3>
                 <div className="text-sm md:text-base text-muted-foreground flex flex-col gap-2">
                   <p className="max-w-[460px]">
@@ -66,7 +66,7 @@ export default function Features() {
               <div className="pointer-events-none flex grow items-center justify-center select-none relative mt-4 sm:mt-6">
                 <div className="relative w-full h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop"
+                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80"
                     alt={t('features.web.alt')}
                     className="w-full h-full object-cover rounded-xl"
                   />
@@ -76,7 +76,7 @@ export default function Features() {
 
             {/* Mobile App Development */}
             <motion.div
-              className="group border-border/50 text-card-foreground relative col-span-12 flex flex-col overflow-hidden rounded-xl border-2 p-4 sm:p-6 shadow-lg transition-all ease-in-out md:col-span-6 xl:col-span-5 xl:col-start-8"
+              className="group border-border/50 text-card-foreground relative col-span-12 flex flex-col overflow-hidden rounded-xl border-2 p-4 sm:p-6 shadow-lg transition-all ease-in-out md:col-span-6 xl:col-span-5 xl:col-start-7"
               initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -86,7 +86,7 @@ export default function Features() {
                 boxShadow: "0 0 30px var(--primary)",
               }}
             >
-              <div className="flex flex-col gap-3 sm:gap-4">
+              <div className="flex flex-col gap-3 sm:gap-4 items-center text-center">
                 <h3 className="text-xl sm:text-2xl leading-tight font-semibold tracking-tight">{t('features.mobile.title')}</h3>
                 <div className="text-sm md:text-base text-muted-foreground flex flex-col gap-2">
                   <p className="max-w-[460px]">
@@ -96,7 +96,7 @@ export default function Features() {
               </div>
               <div className="flex min-h-64 sm:min-h-80 md:min-h-96 grow items-center justify-center select-none relative mt-4 sm:mt-6">
                 <img
-                  src="https://images.unsplash.com/photo-1512941691920-25bda36dc643?w=600&h=400&fit=crop"
+                  src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80"
                   alt={t('features.mobile.alt')}
                   className="w-full h-full object-cover rounded-xl"
                 />
@@ -115,7 +115,7 @@ export default function Features() {
                 boxShadow: "0 0 30px var(--primary)",
               }}
             >
-              <div className="flex flex-col gap-3 sm:gap-4">
+              <div className="flex flex-col gap-3 sm:gap-4 items-center text-center">
                 <h3 className="text-xl sm:text-2xl leading-tight font-semibold tracking-tight">{t('features.uiux.title')}</h3>
                 <div className="text-sm md:text-base text-muted-foreground flex flex-col gap-2">
                   <p className="max-w-[460px]">
@@ -125,7 +125,7 @@ export default function Features() {
               </div>
               <div className="flex grow items-center justify-center select-none relative min-h-64 sm:min-h-80 md:min-h-96 p-4 mt-4 sm:mt-6">
                 <img
-                  src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop"
+                  src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80"
                   alt={t('features.uiux.alt')}
                   className="w-full h-full object-cover rounded-lg"
                 />
@@ -134,7 +134,7 @@ export default function Features() {
 
             {/* Cloud Solutions */}
             <motion.div
-              className="group border-border/50 text-card-foreground relative col-span-12 flex flex-col overflow-hidden rounded-xl border-2 p-4 sm:p-6 shadow-lg transition-all ease-in-out md:col-span-6 xl:col-span-5 xl:col-start-8"
+              className="group border-border/50 text-card-foreground relative col-span-12 flex flex-col overflow-hidden rounded-xl border-2 p-4 sm:p-6 shadow-lg transition-all ease-in-out md:col-span-6 xl:col-span-5 xl:col-start-7"
               initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
@@ -144,7 +144,7 @@ export default function Features() {
                 boxShadow: "0 0 30px var(--primary)",
               }}
             >
-              <div className="flex flex-col gap-3 sm:gap-4">
+              <div className="flex flex-col gap-3 sm:gap-4 items-center text-center">
                 <h3 className="text-xl sm:text-2xl leading-tight font-semibold tracking-tight">{t('features.cloud.title')}</h3>
                 <div className="text-sm md:text-base text-muted-foreground flex flex-col gap-2">
                   <p className="max-w-[460px]">
@@ -154,7 +154,7 @@ export default function Features() {
               </div>
               <div className="flex grow items-center justify-center select-none relative min-h-64 sm:min-h-80 md:min-h-96 p-4 mt-4 sm:mt-6">
                 <img
-                  src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop"
+                  src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
                   alt={t('features.cloud.alt')}
                   className="w-full h-full object-cover rounded-lg"
                 />
@@ -173,17 +173,17 @@ export default function Features() {
                 boxShadow: "0 0 30px var(--primary)",
               }}
             >
-              <div className="flex flex-col gap-3 sm:gap-4">
+              <div className="flex flex-col gap-3 sm:gap-4 items-center text-center">
                 <h3 className="text-xl sm:text-2xl leading-tight font-semibold tracking-tight">{t('features.custom.title')}</h3>
-                <div className="text-sm md:text-base text-muted-foreground flex flex-col gap-2">
-                  <p className="max-w-[460px]">
+                <div className="text-sm md:text-base text-muted-foreground flex flex-col gap-2 items-center">
+                  <p className="w-full text-center">
                     {t('features.custom.desc')}
                   </p>
                 </div>
               </div>
               <div className="flex grow items-center justify-center select-none relative min-h-48 sm:min-h-64 md:min-h-72 p-4 mt-4 sm:mt-6">
                 <img
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=600&fit=crop"
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
                   alt={t('features.custom.alt')}
                   className="w-full h-full object-cover rounded-lg"
                 />

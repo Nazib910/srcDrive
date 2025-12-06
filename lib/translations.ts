@@ -6,7 +6,7 @@ export const translations: Record<string, Record<Language, string>> = {
     en: 'Professional web development, mobile app development, UI/UX design, cloud solutions, and custom software development services.',
     de: 'Professionelle Webentwicklung, mobile App-Entwicklung, UI/UX-Design, Cloud-Lösungen und maßgeschneiderte Softwareentwicklungsdienste.'
   },
-  'nav.features': { en: 'Features', de: 'Funktionen' },
+  'nav.services': { en: 'Services', de: 'Dienstleistungen' },
   'nav.about': { en: 'About', de: 'Über uns' },
   'nav.projects': { en: 'Projects', de: 'Projekte' },
   'nav.contact': { en: 'Contact', de: 'Kontakt' },

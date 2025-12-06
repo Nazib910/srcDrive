@@ -17,6 +17,7 @@ import { ContactSection } from "@/components/contact-section"
 import { LocalizationButton } from "@/components/ui/localization-button"
 import { SearchModal } from "@/components/search-modal"
 import { useLocalization } from "@/contexts/LocalizationContext"
+import TechStackCanvas from "@/components/tech-stack-canvas"
 import magnifierAnimation from "@/public/wired-outline-19-magnifier-zoom-search-hover-spin.json"
 
 interface NavItem {
@@ -59,8 +60,8 @@ export default function Home() {
 
   const navItems: NavItem[] = [
     {
-      label: t('nav.features'),
-      id: "features",
+      label: t('nav.services'),
+      id: "services",
       gradient: "radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(37,99,235,0.06) 50%, rgba(29,78,216,0) 100%)",
       iconColor: "text-blue-500",
     },
@@ -295,10 +296,10 @@ export default function Home() {
           <div className="absolute top-20 left-4 right-4 bg-background/95 backdrop-blur-md border border-border/50 rounded-2xl shadow-2xl p-6">
             <nav className="flex flex-col space-y-4">
               <button
-                onClick={() => handleMobileNavClick("features")}
+                onClick={() => handleMobileNavClick("services")}
                 className="text-left px-4 py-3 text-lg font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-background/50"
               >
-                Features
+                Services
               </button>
               <button
                 onClick={() => handleMobileNavClick("about")}
@@ -338,7 +339,7 @@ export default function Home() {
       <Hero />
 
       {/* Features Section */}
-      <div id="features">
+      <div id="services">
         <Features />
       </div>
 
@@ -358,6 +359,11 @@ export default function Home() {
       </div>
 
       <NewReleasePromo />
+
+      {/* Tech Stack Section */}
+      <div id="tech-stack" className="py-16">
+        <TechStackCanvas />
+      </div>
 
       {/* FAQ Section */}
       <div id="faq">

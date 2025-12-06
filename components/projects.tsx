@@ -17,37 +17,37 @@ export const Projects = () => {
       title: "E-Commerce Platform",
       description: "Full-stack e-commerce solution with payment integration, inventory management, and analytics dashboard.",
       tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
     },
     {
       title: "Mobile Health App",
       description: "Cross-platform mobile application for health tracking with real-time notifications and cloud sync.",
       tags: ["React Native", "Firebase", "AWS"],
-      image: "https://images.unsplash.com/photo-1512941691920-25bda36dc643?w=600&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
     },
     {
       title: "AI Analytics Dashboard",
       description: "Advanced analytics dashboard with AI-powered insights, data visualization, and predictive modeling.",
       tags: ["Next.js", "Python", "TensorFlow", "MongoDB"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80",
     },
     {
       title: "Cloud Management System",
       description: "Enterprise cloud infrastructure management tool with multi-region support and automated scaling.",
       tags: ["Kubernetes", "Go", "React", "AWS"],
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80",
     },
     {
       title: "Social Media Platform",
       description: "Real-time social network with messaging, notifications, and content recommendation engine.",
       tags: ["Next.js", "WebSocket", "Redis", "PostgreSQL"],
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
     },
     {
       title: "Video Streaming Service",
       description: "High-performance video streaming platform with adaptive bitrate and distributed CDN.",
       tags: ["Vue.js", "FFmpeg", "HLS", "S3"],
-      image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=800&q=80",
     },
   ]
 
@@ -83,7 +83,7 @@ export const Projects = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative rounded-xl border border-border/50 overflow-hidden bg-background/50 backdrop-blur-sm hover:border-border hover:shadow-xl transition-all duration-300"
+              className="group relative rounded-xl border border-border/50 overflow-hidden bg-background/50 backdrop-blur-sm hover:border-border hover:shadow-xl transition-all duration-300 flex flex-col h-full"
             >
               {/* Project Image */}
               <div className="relative h-48 overflow-hidden">
@@ -92,11 +92,11 @@ export const Projects = () => {
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+
               </div>
 
               {/* Project Content */}
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-semibold mb-2 text-foreground">{project.title}</h3>
                 <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{project.description}</p>
 
@@ -110,7 +110,7 @@ export const Projects = () => {
                 </div>
 
                 {/* Hover Arrow */}
-                <div className="mt-6 flex items-center gap-2 text-primary group-hover:gap-3 transition-all duration-300">
+                <div className="mt-auto pt-6 flex items-center gap-2 text-primary group-hover:gap-3 transition-all duration-300">
                   <span className="text-sm font-medium">View Case Study</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -6,6 +6,7 @@ import { translations, Language } from '@/lib/translations';
 interface LocalizationContextType {
   language: Language;
   toggleLanguage: () => void;
+  setLanguage: (lang: Language) => void;
   t: (key: string) => string;
 }
 
@@ -49,7 +50,7 @@ export const LocalizationProvider: React.FC<LocalizationProviderProps> = ({ chil
   };
 
   return (
-    <LocalizationContext.Provider value={{ language, toggleLanguage, t }}>
+    <LocalizationContext.Provider value={{ language, toggleLanguage, setLanguage, t }}>
       {children}
     </LocalizationContext.Provider>
   );

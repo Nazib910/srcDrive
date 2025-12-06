@@ -14,25 +14,25 @@ const testimonials = [
     name: "Sarah Chen",
     username: "@sarahtech",
     body: "The UI/UX design they created for us was stunning. Our users loved the interface immediately.",
-    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
+    img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
   },
   {
     name: "Michael Rodriguez",
     username: "@mikebuilds",
     body: "From mobile app development to cloud solutions, SRCDrive handles everything with professionalism.",
-    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
   },
   {
     name: "Emily Watson",
     username: "@emilycode",
     body: "Their custom software development perfectly matched our complex business requirements.",
-    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
+    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
   },
   {
     name: "David Kim",
     username: "@davidtech",
     body: "Best decision to partner with SRCDrive. Professional, responsive, and results-driven.",
-    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face",
   },
   {
     name: "Jessica Lopez",
@@ -44,7 +44,7 @@ const testimonials = [
     name: "James Thompson",
     username: "@jamestech",
     body: "SRCDrive transformed our vision into a market-ready product. Highly recommended.",
-    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
   },
   {
     name: "Rachel Green",
@@ -56,7 +56,7 @@ const testimonials = [
     name: "Thomas Brown",
     username: "@tomdev",
     body: "SRCDrive's expertise in web development helped us launch faster than anticipated.",
-    img: "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=150&h=150&fit=crop&crop=face",
+    img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
   },
 ]
 

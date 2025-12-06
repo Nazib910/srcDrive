@@ -59,12 +59,13 @@ export const About = () => {
         transition={{ duration: 0.5 }}
         className="container mx-auto max-w-5xl"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.5, delay: 0.1 }}
+            className="md:col-span-5"
           >
             <h2
               className={cn(
@@ -105,7 +106,7 @@ export const About = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative h-96 md:h-full min-h-96"
+            className="relative h-96 md:h-full min-h-96 md:col-span-7"
           >
             <RotatingEarth width={800} height={600} className="w-full h-full" language={language} theme={theme} />
           </motion.div>

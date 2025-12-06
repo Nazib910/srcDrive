@@ -88,36 +88,36 @@ export default function Hero() {
   return (
     <div id="hero-section" className="bg-background relative min-h-screen w-full overflow-x-hidden py-32 md:px-6">
       <img
-        src="/vector1.webp"
-        alt="Vector"
-        width={300}
+        src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=500"
+        alt="Abstract Gradient"
+        width={500}
         draggable={false}
-        height={300}
-        className="absolute top-0 right-0 z-[2] object-cover object-center select-none"
+        height={500}
+        className="absolute top-0 right-0 z-[2] object-cover object-center select-none opacity-40 mix-blend-screen dark:mix-blend-lighten pointer-events-none"
       />
       <img
-        src="/vector2.png"
-        alt="Vector"
-        width={300}
-        height={300}
+        src="https://images.unsplash.com/photo-1550684847-75bdda21cc95?auto=format&fit=crop&q=80&w=500"
+        alt="Abstract Gradient"
+        width={500}
+        height={500}
         draggable={false}
-        className="absolute top-0 left-0 z-[2] object-cover object-center select-none"
+        className="absolute top-0 left-0 z-[2] object-cover object-center select-none opacity-40 mix-blend-screen dark:mix-blend-lighten pointer-events-none"
       />
       <img
-        src="/vector5.webp"
-        alt="Vector"
-        width={300}
+        src="https://images.unsplash.com/photo-1550684848-86a5d8727436?auto=format&fit=crop&q=80&w=500"
+        alt="Abstract Gradient"
+        width={500}
         draggable={false}
-        height={300}
-        className="absolute bottom-0 -left-44 z-[2] -rotate-90 object-cover object-center select-none"
+        height={500}
+        className="absolute bottom-0 -left-44 z-[2] -rotate-90 object-cover object-center select-none opacity-40 mix-blend-screen dark:mix-blend-lighten pointer-events-none"
       />
       <img
-        src="/vector6.png"
-        alt="Vector"
-        width={300}
+        src="https://images.unsplash.com/photo-1550684847-c71513393084?auto=format&fit=crop&q=80&w=500"
+        alt="Abstract Gradient"
+        width={500}
         draggable={false}
-        height={300}
-        className="absolute -right-44 bottom-0 z-[2] rotate-90 object-cover object-center select-none"
+        height={500}
+        className="absolute -right-44 bottom-0 z-[2] rotate-90 object-cover object-center select-none opacity-40 mix-blend-screen dark:mix-blend-lighten pointer-events-none"
       />
       <div className="px-4 2xl:max-w-[1400px]">
         <motion.div
@@ -141,10 +141,10 @@ export default function Hero() {
           >
             Prebuilt UI
             <img
-              src="/rose.webp"
-              alt="Logo"
+              src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=200"
+              alt="3D Shape"
               draggable={false}
-              className="mx-4 mb-2 inline-block h-12 w-12 md:h-16 md:w-16"
+              className="mx-4 mb-2 inline-block h-12 w-12 md:h-16 md:w-16 rounded-full object-cover shadow-lg"
             />
             blocks to ship beautiful MVPs fast.
           </motion.h1>
